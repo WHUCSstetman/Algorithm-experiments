@@ -2,7 +2,7 @@
 #include<vector>
 using namespace std;
 
-int three_search(const vector<double>& a, double x)
+int ternary_search(const vector<double>& a, double x)
 {
     int length = a.size();
     if(length<3)
@@ -29,17 +29,17 @@ int three_search(const vector<double>& a, double x)
     if(x <= a[l1 - 1] && x >= a[0])
     {
         vector<double> temp(a.begin(), a.begin() + l1);
-        return three_search(temp, x);
+        return ternary_search(temp, x);
     }
     else if(x > a[l1 - 1] && x <= a[l2 - 1])
     {
         vector<double> temp(a.begin() + l1, a.begin() + l2);
-        return three_search(temp, x) + l1;
+        return ternary_search(temp, x) + l1;
     }
     else if(x > a[l2 - 1] && x <= a[length - 1])
     {
         vector<double> temp(a.begin() + l2, a.end());
-        return three_search(temp, x) + l2;
+        return ternary_search(temp, x) + l2;
     }
     else
     {
@@ -51,6 +51,6 @@ int three_search(const vector<double>& a, double x)
 int main()
 {
     vector<double> test = {1.0, 3.0, 5.0, 7.0, 9.0, 15.0, 21.0};
-    cout << three_search(test, 5.0) << endl;
-    cout << three_search(test, 4.0) << endl;
+    cout << ternary_search(test, 5.0) << endl;
+    cout << ternary_search(test, 4.0) << endl;
 }
