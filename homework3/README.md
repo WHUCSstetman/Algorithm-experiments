@@ -4,4 +4,3 @@
 
 2.Please implement the knapsack problem using dynamic programming.
 
-3.
